@@ -11,16 +11,13 @@ app.use(express.json())
 
 
 
-app.use(cors({
-  origin: ["https://crud-app-front-three.vercel.app",
-    // "https://crud-app-front-three.vercel.app/add",
-    // "https://crud-app-front-three.vercel.app/createUser",
-    // "https://crud-app-front-three.vercel.app/updateUser/:id",
-    // "https://crud-app-front-three.vercel.app/deleteUser/:id"
-  ],
-  methods: ["POST", "DELETE", "GET", "DELETE", "PUT"],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: 'https://crud-app-front-three.vercel.app',
+    methods: ['POST', 'DELETE', 'GET', 'PUT'],
+    credentials: true,
+  })
+);
 
 
 mongoose.connect("mongodb+srv://idamhamedsafa:88safa88@cluster0.scmgzk3.mongodb.net/CrudApp")
