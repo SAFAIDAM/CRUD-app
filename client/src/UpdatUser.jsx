@@ -21,7 +21,7 @@ function UpdateUser() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/getUser" + id)
+      .get("https://crud-app-mern-psi.vercel.app/getUser" + id)
       .then((result) => {
         console.log(result);
 
@@ -35,7 +35,7 @@ function UpdateUser() {
 
   const update = (e) => {
     e.preventDefault();
-    axios.put("http://localhost:8000/updateUser/"+id, {name, email, phone, enroll})
+    axios.put("https://crud-app-mern-psi.vercel.app/updateUser/"+id, {name, email, phone, enroll})
     .then(result => {
       console.log(result)
       navigate('/add')

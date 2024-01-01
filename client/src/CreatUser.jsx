@@ -18,7 +18,7 @@ function CreateUser() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/createUser", { name, email, phone, enroll })
+      .post("https://crud-app-mern-psi.vercel.app/createUser", { name, email, phone, enroll })
       .then((result) => {
         console.log(result);
         navigate("/add");
