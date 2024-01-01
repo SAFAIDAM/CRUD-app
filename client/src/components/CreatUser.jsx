@@ -18,7 +18,12 @@ function CreateUser() {
   const Submit = (e) => {
     e.preventDefault();
     axios
-      .post("https://crud-app-mern-psi.vercel.app/createUser", { name, email, phone, enroll })
+      .post("https://crud-app-mern-psi.vercel.app/createUser", {
+        name,
+        email,
+        phone,
+        enroll,
+      })
       .then((result) => {
         console.log(result);
         navigate("/add");
@@ -38,32 +43,16 @@ function CreateUser() {
             <h2>New Student</h2>
 
             <label htmlFor="">Name</label>
-            <input
-              type="text"
-             
-              onChange={(e) => setName(e.target.value)}
-            />
+            <input type="text" onChange={(e) => setName(e.target.value)} />
 
             <label htmlFor="">Email</label>
-            <input
-              type="email"
-             
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input type="email" onChange={(e) => setEmail(e.target.value)} />
 
             <label htmlFor="">Phone number</label>
-            <input
-              type="text"
-              
-              onChange={(e) => setPhone(e.target.value)}
-            />
+            <input type="text" onChange={(e) => setPhone(e.target.value)} />
 
             <label htmlFor="">Enroll number</label>
-            <input
-              type="text"
-              
-              onChange={(e) => setEnroll(e.target.value)}
-            />
+            <input type="text" onChange={(e) => setEnroll(e.target.value)} />
             <label>Photo de profil</label>
             <div className="uploadImage">
               <div className="uploadIcon">

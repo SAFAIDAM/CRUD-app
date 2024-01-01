@@ -1,4 +1,4 @@
-import profile from "../public/profile.png";
+import profile from "../../public/profile.png";
 import { BiHome } from "react-icons/bi";
 import { IoLogOutOutline } from "react-icons/io5";
 

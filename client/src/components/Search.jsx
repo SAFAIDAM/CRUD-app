@@ -1,5 +1,5 @@
-import searchIcon from "../public/search.png";
-import bell from "../public/bell.png";
+import searchIcon from "../../public/search.png";
+import bell from "../../public/bell.png";
 
 export default function Search() {
   return (

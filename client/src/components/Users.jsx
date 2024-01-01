@@ -1,39 +1,34 @@
-import Search from "./Search";
-import SideBar from "./SideBar";
-import { Outlet } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { LuPencil } from "react-icons/lu";
-
 import { SlTrash } from "react-icons/sl";
 import AddUser from "./AddUser";
-import profile from "../public/profile.png";
+import profile from "../../public/profile.png";
 
-export default function Layout() {
+function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://crud-app-mern-psi.vercel.app/")
+      .get("http://localhost:8000/")
       .then((result) => setUsers(result.data))
       .catch((err) => console.log(err));
   }, []);
+
   const handleDelete = (id) => {
     axios
-      .delete("https://crud-app-mern-psi.vercel.app/deleteUser/" + id)
+      .delete("http://localhost:8000/deleteUser/" + id)
       .then((res) => {
         console.log(res);
         window.location.reload();
       })
       .catch((err) => console.log(err));
   };
+
   return (
-    <main>
-      <SideBar />
-      <div className="mainContent">
-        <Search />
-        <Outlet />
+    <div className="mainContent">
+      <div className="wrapper">
         <AddUser />
         <table width={700}>
           <thead className="titles">
@@ -57,7 +52,7 @@ export default function Layout() {
                   <td className="name">{user.name}</td>
                   <td className="email">{user.email}</td>
                   <td className="number">{user.phone}</td>
-                  <td className="enrole">{user.enroll}</td>
+                  <td className="enrole">{user.enrollNumber}</td>
                   <td className="date">08-Dec, 2021</td>
                   <td className="edit">
                     <Link to={`/update/${user._id}`}>
@@ -74,6 +69,8 @@ export default function Layout() {
           </tbody>
         </table>
       </div>
-    </main>
+    </div>
   );
 }
+
+export default Users;

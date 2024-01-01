@@ -8,7 +8,6 @@ import SideBar from "./SideBar";
 import { Outlet } from "react-router-dom";
 import { BsUpload } from "react-icons/bs";
 
-
 function UpdateUser() {
   const { id } = useParams();
 
@@ -35,44 +34,65 @@ function UpdateUser() {
 
   const update = (e) => {
     e.preventDefault();
-    axios.put("https://crud-app-mern-psi.vercel.app/updateUser/"+id, {name, email, phone, enroll})
-    .then(result => {
-      console.log(result)
-      navigate('/add')
-    })
-    .catch(err => console.log(err))
-
-  }
+    axios
+      .put("https://crud-app-mern-psi.vercel.app/updateUser/" + id, {
+        name,
+        email,
+        phone,
+        enroll,
+      })
+      .then((result) => {
+        console.log(result);
+        navigate("/add");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
-  
-    <main >
+    <main>
       <SideBar />
       <div className="mainContent">
         <Search />
         <Outlet />
         <AddUser form />
-        
-    <div className="formContainer">
-      <form onSubmit={update}>
-      <h2>Update Student</h2>
-       
-          <label htmlFor="">Name</label>
-          <input type="text" placeholder="" value={name} onChange={(e) => setName(e.target.value)} />
-       
-        
-          <label htmlFor="">Email</label>
-          <input type="text" placeholder="" value={email} onChange={(e) => setEmail(e.target.value)} />
-       
-      
-          <label htmlFor="">Phone number</label>
-          <input type="text" placeholder="" value={phone} onChange={(e) => setPhone(e.target.value)} />
-       
-      
-          <label htmlFor="">Enroll number</label>
-          <input type="text" placeholder="" value={enroll} onChange={(e) => setEnroll(e.target.value)} />
 
-          <p>Photo de profil</p>
+        <div className="formContainer">
+          <form onSubmit={update}>
+            <h2>Update Student</h2>
+
+            <label htmlFor="">Name</label>
+            <input
+              type="text"
+              placeholder=""
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
+            <label htmlFor="">Email</label>
+            <input
+              type="text"
+              placeholder=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <label htmlFor="">Phone number</label>
+            <input
+              type="text"
+              placeholder=""
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+
+            <label htmlFor="">Enroll number</label>
+            <input
+              type="text"
+              placeholder=""
+              value={enroll}
+              onChange={(e) => setEnroll(e.target.value)}
+            />
+
+            <p>Photo de profil</p>
             <div className="uploadImage">
               <div className="uploadIcon">
                 <BsUpload className="upicn" />
@@ -86,17 +106,12 @@ function UpdateUser() {
                 </p>
               </div>
             </div>
-        
-        <button>UPDATE STUDENT</button>
-        
-      </form>
-    </div>
-    </div>
 
+            <button>UPDATE STUDENT</button>
+          </form>
+        </div>
+      </div>
     </main>
-     
- 
-    
   );
 }
 

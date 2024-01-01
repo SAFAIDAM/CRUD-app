@@ -20,6 +20,9 @@ app.use(cors({
 
 mongoose.connect("mongodb+srv://idamhamedsafa:88safa88@cluster0.scmgzk3.mongodb.net/?retryWrites=true&w=majority")
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the CRUD app!");
+});
 
 app.get("/add", (req, res) => {
   UserModel.find({})
