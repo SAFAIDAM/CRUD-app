@@ -24,7 +24,7 @@ app.use(
 );
 
 
-mongoose.connect("mongodb+srv://idamhamedsafa:88safa88@cluster0.scmgzk3.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://idamhamedsafa:88safa88@cluster0.scmgzk3.mongodb.net/CrudApp?retryWrites=true&w=majority")
 
 app.get("/", (req, res) => {
   res.send("Welcome to the CRUD app!");

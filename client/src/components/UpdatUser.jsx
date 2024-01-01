@@ -23,7 +23,6 @@ function UpdateUser() {
       .get("https://crud-app-mern-psi.vercel.app/getUser" + id)
       .then((result) => {
         console.log(result);
-
         setName(result.data.name);
         setEmail(result.data.email);
         setPhone(result.data.phone);
