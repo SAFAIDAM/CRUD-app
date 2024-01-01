@@ -14,10 +14,10 @@ export default function Layout() {
 
   useEffect(() => {
     axios
-      .get("https://crud-app-mern-psi.vercel.app/")
+      .get("https://crud-app-mern-psi.vercel.app/users")
       .then((result) => {
         console.log(result.data); // Check the response data
-        setUsers(result.data);
+        setUsers(result.data.users);
       })
       .catch((err) => console.log(err));
   }, []);
