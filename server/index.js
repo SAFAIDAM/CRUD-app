@@ -5,7 +5,7 @@ const multer = require('mongoose')
 const UserModel = require("./models/Users")
 
 const app = express()
-app.use(express.json())
+
 
 
 
@@ -22,7 +22,7 @@ app.use(
     credentials: true,
   })
 );
-
+app.use(express.json())
 
 mongoose.connect("mongodb+srv://idamhamedsafa:88safa88@cluster0.scmgzk3.mongodb.net/CrudApp?retryWrites=true&w=majority")
 
