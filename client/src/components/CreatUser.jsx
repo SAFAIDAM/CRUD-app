@@ -26,7 +26,7 @@ function CreateUser() {
       })
       .then((result) => {
         console.log(result);
-        navigate("/");
+        navigate("/add");
       })
       .catch((err) => console.log(err));
   };
