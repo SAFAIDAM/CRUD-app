@@ -42,7 +42,7 @@ function UpdateUser() {
       })
       .then((result) => {
         console.log(result);
-        navigate("/add");
+        navigate("/");
       })
       .catch((err) => console.log(err));
   };
