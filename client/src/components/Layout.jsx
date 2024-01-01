@@ -51,7 +51,7 @@ export default function Layout() {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id}>
+              <tr key={user._id}>
                 <div className="singleUser">
                   <td>
                     <img src={profile} alt="user" />
