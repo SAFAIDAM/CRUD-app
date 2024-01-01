@@ -17,7 +17,7 @@ app.use(
       'https://crud-app-front-ten.vercel.app/add',
       'https://crud-app-front-ten.vercel.app/createUser',
       'https://crud-app-front-ten.vercel.app/updateUser/:id',
-      'https://crud-app-front-ten.vercel.app//:id'],
+      'https://crud-app-front-ten.vercel.app/deleteUser/:id'],
     methods: ['POST', 'DELETE', 'GET', 'PUT'],
     credentials: true,
   })
