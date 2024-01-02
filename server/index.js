@@ -5,11 +5,6 @@ const multer = require('mongoose')
 const UserModel = require("./models/Users")
 
 const app = express()
-
-
-
-
-
 app.use(
   cors({
     origin: 'https://crud-app-front-ten.vercel.app',

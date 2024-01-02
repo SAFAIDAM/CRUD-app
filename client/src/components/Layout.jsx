@@ -50,36 +50,36 @@ export default function Layout() {
             </tr>
           </thead>
           <tbody>
-  {users.length > 0 ? (
-    users.map((user) => (
-      <tr key={user._id}>
-        <div className="singleUser">
-          <td>
-            <img src={profile} alt="user" />
-          </td>
-          <td className="name">{user.name}</td>
-          <td className="email">{user.email}</td>
-          <td className="number">{user.phone}</td>
-          <td className="enrole">{user.enroll}</td>
-          <td className="date">08-Dec, 2021</td>
-          <td className="edit">
-            <Link to={`/update/${user._id}`}>
-              <LuPencil className="icon" />
-            </Link>
-            <SlTrash
-              className="icon"
-              onClick={() => handleDelete(user._id)}
-            />
-          </td>
-        </div>
-      </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan={7}>No users found</td>
-    </tr>
-  )}
-</tbody>
+            {users.length > 0 ? (
+              users.map((user) => (
+                <tr key={user._id}>
+                  <div className="singleUser">
+                    <td>
+                      <img src={profile} alt="user" />
+                    </td>
+                    <td className="name">{user.name}</td>
+                    <td className="email">{user.email}</td>
+                    <td className="number">{user.phone}</td>
+                    <td className="enrole">{user.enroll}</td>
+                    <td className="date">08-Dec, 2021</td>
+                    <td className="edit">
+                      <Link to={`/update/${user._id}`}>
+                        <LuPencil className="icon" />
+                      </Link>
+                      <SlTrash
+                        className="icon"
+                        onClick={() => handleDelete(user._id)}
+                      />
+                    </td>
+                  </div>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={7}>No users found</td>
+              </tr>
+            )}
+          </tbody>
         </table>
       </div>
     </main>
